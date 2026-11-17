@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Text('SANTUARIO DEL FÉNIX', style: theme.textTheme.titleLarge),
+          child: Text("SANTUARIO DEL FÉNIX", style: theme.textTheme.titleLarge),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -62,7 +62,9 @@ class HomeScreen extends StatelessWidget {
                   title: 'SOBRE MÍ',
                   subtitle: '¿Quién soy?',
                   icon: FontAwesomeIcons.featherPointed,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'about');
+                  },
                 ),
 
                 _MenuButton(
