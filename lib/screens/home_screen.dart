@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_app_fenix/themes/app_theme.dart';
+import "package:flutter/material.dart";
+import "package:font_awesome_flutter/font_awesome_flutter.dart";
+import "package:flutter_app_fenix/themes/app_theme.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, 'developer');
+              Navigator.pushNamed(context, "developer");
             },
             icon: FaIcon(FontAwesomeIcons.shieldHalved),
             color: theme.colorScheme.primary,
@@ -59,30 +59,32 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
               children: [
                 _MenuButton(
-                  title: 'SOBRE MÍ',
-                  subtitle: '¿Quién soy?',
+                  title: "SOBRE MÍ",
+                  subtitle: "¿Quién soy?",
                   icon: FontAwesomeIcons.featherPointed,
                   onTap: () {
-                    Navigator.pushNamed(context, 'about');
+                    Navigator.pushNamed(context, "about");
                   },
                 ),
 
                 _MenuButton(
-                  title: '¿QUÉ HAGO?',
-                  subtitle: 'Técnicas y Recursos de Combate',
+                  title: "¿QUÉ HAGO?",
+                  subtitle: "Técnicas y Recursos de Combate",
                   icon: FontAwesomeIcons.fireFlameCurved,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "techniques");
+                  },
                 ),
 
                 _MenuButton(
-                  title: 'HOBBIES',
-                  subtitle: 'Entrenamiento y Meditación',
+                  title: "HOBBIES",
+                  subtitle: "Entrenamiento y Meditación",
                   icon: FontAwesomeIcons.yinYang,
                   onTap: () {},
                 ),
                 _MenuButton(
-                  title: 'CONTACTO',
-                  subtitle: 'Deja tu mensaje',
+                  title: "CONTACTO",
+                  subtitle: "Deja tu mensaje",
                   icon: FontAwesomeIcons.scroll,
                   onTap: () {},
                 ),
