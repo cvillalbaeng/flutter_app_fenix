@@ -43,7 +43,7 @@ class TechniquesScreen extends StatelessWidget {
     AttackModel(
       name: "Lava del Fénix",
       description: "Tras portar la Armadura Dorada de Leo, sus llamas evolucionan hacia un ataque de magma cósmico devastador.",
-      imageAsset: "assets/images/lava.png",
+      imageAsset: "assets/images/lava.gif",
       category: "Técnica Evolutiva",
       powerLevel: 98,
       saga: "Episode.G: Requiem",
@@ -104,7 +104,7 @@ class TechniquesScreen extends StatelessWidget {
                   Text(ataque.name, style: theme.textTheme.titleMedium),
                   const SizedBox(height: 6),
                   Text(
-                    '${ataque.category} | ${ataque.saga}',
+                    "${ataque.category} | ${ataque.saga}",
                     style: theme.textTheme.bodyMedium,
                   ),
                   const Divider(
@@ -112,6 +112,16 @@ class TechniquesScreen extends StatelessWidget {
                     height: 24,
                     thickness: 0.3,
                   ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      ataque.imageAsset,
+                      height: 160,
+                      width: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  const SizedBox(height: 14),
                   Text(ataque.description, style: theme.textTheme.bodyLarge),
                   const SizedBox(height: 20),
                   Text(
@@ -131,7 +141,7 @@ class TechniquesScreen extends StatelessWidget {
                     trailing: Padding(
                       padding: const EdgeInsets.only(left: 12.0),
                       child: Text(
-                        '${ataque.powerLevel}%',
+                        "${ataque.powerLevel}%",
                         style: theme.textTheme.bodyLarge,
                       ),
                     ),

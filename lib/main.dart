@@ -13,9 +13,9 @@ class PortafolioFenix extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Ikki Portafolio',
+      title: "Ikki Portafolio",
       theme: AppTheme.darkTheme,
-      initialRoute: 'home',
+      initialRoute: "welcome",
       routes: AppRoutes.getRoutes(),
     );
   }
