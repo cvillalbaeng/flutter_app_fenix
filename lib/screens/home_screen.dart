@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:flutter_app_fenix/themes/app_theme.dart";
+import 'package:flutter_app_fenix/widgets/app_footer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -85,11 +86,14 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 _MenuButton(
-                  title: "CONTACTO",
+                  title: "CONTACTA Y DEJA TU COMENTARIO",
                   subtitle: "Deja tu mensaje",
                   icon: FontAwesomeIcons.scroll,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "contact");
+                  },
                 ),
+                const AppFooter(),
               ],
             ),
           ),

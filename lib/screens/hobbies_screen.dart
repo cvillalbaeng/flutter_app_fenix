@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
 import "package:flutter_app_fenix/themes/app_theme.dart";
+import 'package:flutter_app_fenix/widgets/app_footer.dart';
 
 class HobbiesScreen extends StatelessWidget {
   const HobbiesScreen({super.key});
@@ -38,6 +39,8 @@ class HobbiesScreen extends StatelessWidget {
             description: "Observar los combates desde las sombras y aparecer en el instante decisivo para respaldar a Shun y a los caballeros de bronce.",
             icon: FontAwesomeIcons.featherPointed,
           ),
+          SizedBox(height: 8),
+          AppFooter(),
         ],
       ),
     );

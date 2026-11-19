@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:percent_indicator/percent_indicator.dart";
 import "package:flutter_app_fenix/models/attack_model.dart";
 import "package:flutter_app_fenix/themes/app_theme.dart";
+import "package:flutter_app_fenix/widgets/app_footer.dart";
 
 class TechniquesScreen extends StatelessWidget {
   const TechniquesScreen({super.key});
@@ -15,7 +16,6 @@ class TechniquesScreen extends StatelessWidget {
       powerLevel: 90,
       saga: "Clásica / Todas",
     ),
-
     AttackModel(
       name: "Vuelo del Fénix",
       description: "Es su ataque físico y energético principal. Libera una ráfaga de cosmos ardiente y viento con forma de ave fénix que impacta a gran velocidad.",
@@ -24,7 +24,6 @@ class TechniquesScreen extends StatelessWidget {
       powerLevel: 95,
       saga: "Clásica / Todas",
     ),
-
     AttackModel(
       name: "Lanzamiento de Plumas",
       description: "Ikki arranca las plumas de la cola de su armadura para usarlas como proyectiles afilados a distancia.",
@@ -33,7 +32,6 @@ class TechniquesScreen extends StatelessWidget {
       powerLevel: 65,
       saga: "Clásica / Todas",
     ),
-
     AttackModel(
       name: "Autodestrucción Cósmica",
       description: "Recurso ofensivo extremo donde Ikki eleva su cosmos hasta el límite para provocar una explosión masiva junto con su oponente.",
@@ -42,7 +40,6 @@ class TechniquesScreen extends StatelessWidget {
       powerLevel: 100,
       saga: "Clásica / Todas",
     ),
-
     AttackModel(
       name: "Lava del Fénix",
       description: "Tras portar la Armadura Dorada de Leo, sus llamas evolucionan hacia un ataque de magma cósmico devastador.",
@@ -65,15 +62,20 @@ class TechniquesScreen extends StatelessWidget {
           fit: BoxFit.scaleDown,
           child: Text("TÉCNICAS DE COMBATE", style: theme.textTheme.titleLarge),
         ),
-
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(color: colors.primary),
       ),
-
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
-        itemCount: tecnicas.length,
+        itemCount: tecnicas.length + 1,
         itemBuilder: (BuildContext context, int index) {
+          if (index == tecnicas.length) {
+            return const Padding(
+              padding: EdgeInsets.only(top: 6.0),
+              child: AppFooter(),
+            );
+          }
+
           final ataque = tecnicas[index];
 
           return Container(
@@ -90,14 +92,12 @@ class TechniquesScreen extends StatelessWidget {
                 ),
               ],
             ),
-
             child: Container(
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 gradient: AppTheme.cardBackgroundGradient,
               ),
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -107,20 +107,17 @@ class TechniquesScreen extends StatelessWidget {
                     '${ataque.category} | ${ataque.saga}',
                     style: theme.textTheme.bodyMedium,
                   ),
-
                   const Divider(
                     color: AppTheme.textSecondary,
                     height: 24,
                     thickness: 0.3,
                   ),
-
                   Text(ataque.description, style: theme.textTheme.bodyLarge),
                   const SizedBox(height: 20),
                   Text(
                     "NIVEL DE PODER CÓSMICO",
                     style: theme.textTheme.bodyMedium,
                   ),
-
                   const SizedBox(height: 8),
                   LinearPercentIndicator(
                     animation: true,
