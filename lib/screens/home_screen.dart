@@ -80,7 +80,9 @@ class HomeScreen extends StatelessWidget {
                   title: "HOBBIES",
                   subtitle: "Entrenamiento y Meditación",
                   icon: FontAwesomeIcons.yinYang,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "hobbies");
+                  },
                 ),
                 _MenuButton(
                   title: "CONTACTO",
